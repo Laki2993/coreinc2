@@ -1,0 +1,226 @@
+@media (min-width: 1920px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+    }
+
+    header {
+        width: 100%;
+        height: 2.1vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .header_user_name{
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .header_img_user{
+        width: 1.5vw;
+        height: 1.5vw;
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .header_user_data{
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+        padding: 0vw 0.5vw  0vw 0.5vw   ;
+    }
+    .header_user_data:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_logo {
+        width: 5vw;
+        height: 1.5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main{
+        width: 100%;
+        flex: 1;
+        background-color: #F1F1F1;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tool_bar_container{
+        width: 100%;
+        height: 6vw;
+        background-color: rgba(0, 0, 255, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav_tool_bar{
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5vw;
+        border-radius: 0.2vw;
+        background-color: white;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    #create_task{
+        width: 3vw;
+        height: 3vw;
+        background-image: url(../projectboard/plus.svg);
+        background-size: cover;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .tasks_To-do-list{
+        width: 70vw;
+        height: 40vw;
+        background-color: rgb(80, 70, 70);
+        border-radius: 0.2vw;
+        display: grid;
+        justify-content: center;
+        padding: 1vw;
+        overflow-y: scroll;
+    }
+
+    #dialog{
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(241, 241, 241, 0.384);
+        backdrop-filter: blur(15px);
+    }
+
+    .form_create{
+        width: 20vw;
+        height: 10vw;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        border-radius: 0.2vw;
+    }
+
+    .input{
+        width: 15vw;
+        height: 2vw;
+        padding: 0.5vw;
+        border-radius: 0.2vw;
+        border: none;
+    }
+
+    .input:focus{
+        outline: solid 0.2vw rgb(129, 20, 180);
+    }
+
+    .btn_create{
+        width: 15vw;
+        height: 3vw;
+        border-radius: 0.2vw;
+        border: none;
+        font-size: 1.5vw;
+        background-color: rgb(0, 113, 128);
+        color: white;
+    }
+
+    .task_container{
+        width: 65vw;
+        height: 5vw;
+        background-color: rgb(136, 133, 133);
+        padding: 1vw;
+        display: flex;
+        align-items: center;
+        gap: 3vw;
+        border-radius: 0.2vw;
+    }
+
+    .task_title{
+        font-family: AdventPro;
+        font-weight: 700;
+        font-size: 2vw;
+        color: white;
+    }
+
+    .task_description{
+        font-family: AdventPro;
+        font-weight: 400;
+        font-size: 1vw;
+        color: white;
+    }
+}

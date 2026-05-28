@@ -1,0 +1,1943 @@
+@media (min-width: 1920px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../welcome/bg_welcome.png);
+        background-size: cover;
+        background-color: #25185d;
+    }
+
+    header {
+        width: 100%;
+        height: 2.1vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 5vw;
+        height: 1.5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 3vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .main_text {
+        display: grid;
+        grid-template-rows: 5vw 2vw;
+        justify-content: start;
+    }
+
+    .title {
+        position: relative;
+        left: 0vw;
+        font-family: Biryani;
+        font-weight: 900;
+        font-size: 3.34vw;
+        color: white;
+        text-shadow: 0px 1px 6px white;
+        animation-name: title;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes title {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .description {
+        position: relative;
+        left: 0vw;
+        opacity: 0;
+        font-family: Biryani;
+        font-weight: 100;
+        font-size: 1.2vw;
+        color: white;
+        text-shadow: 0px 1px 4px white;
+        animation: description 0.8s ease-out 0.4s forwards;
+    }
+
+    @keyframes description {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started {
+        position: absolute;
+        z-index: 1;
+        width: 12vw;
+        height: 3vw;
+        background-color: #713ee8;
+        text-shadow: 0px 0px 2px white;
+        font-family: Biryani;
+        font-weight: 400;
+        color: white;
+        font-size: 1vw;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .blic {
+        z-index: 0;
+        position: absolute;
+        left: 0vw;
+        top: 0.1vw;
+        width: 0.2vw;
+        height: 0.2vw;
+        background-color: white;
+        box-shadow: 0px 0px 6px white;
+        animation: blic 2s linear infinite;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes blic {
+        0% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            width: 0.2vw;
+            height: 3.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        40% {
+            width: 12.22vw;
+            height: 3.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        60% {
+            width: 0.2vw;
+            height: 3.2vw;
+            transform: translate(12vw, 0vw);
+        }
+        80% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(12vw, 1.5vw);
+            opacity: 0;
+        }
+        100% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+    }
+
+    .btn_container {
+        width: 12.2vw;
+        height: 3.2vw;
+        border-radius: 2px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        left: 0vw;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        animation: started 0.8s ease-out 0.8s forwards;
+    }
+
+    @keyframes started {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started:hover {
+        background-color: #5830b6;
+    }
+
+    footer {
+        width: 100%;
+        height: 5.21vw;
+        background-color: #201552;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_container {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 12vw;
+        height: 4vw;
+        pointer-events: none;
+    }
+
+    .footer_navigation {
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+    }
+
+    .footer_link {
+        text-decoration: dashed;
+        color: white;
+        font-weight: lighter;
+        font-size: 0.9vw;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .footer_link:hover {
+        color: rgb(126, 126, 126);
+    }
+
+    .footer_social_navigation {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .footer_social_btn {
+        width: 2.3vw;
+        height: 2.3vw;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .footer_social_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .footer_social_btn:nth-child(1) {
+        background-image: url(../welcome/logo_vk_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(2) {
+        background-image: url(../welcome/logo_telegram_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(3) {
+        background-image: url(../welcome/logo_email_welcome.svg);
+        background-size: cover;
+    }
+}
+@media (min-width: 1920px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../welcome/bg_welcome.png);
+        background-size: cover;
+        background-color: #25185d;
+    }
+
+    header {
+        width: 100%;
+        height: 2.1vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 5vw;
+        height: 1.5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 3vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .main_text {
+        display: grid;
+        grid-template-rows: 5vw 2vw;
+        justify-content: start;
+    }
+
+    .title {
+        position: relative;
+        left: 0vw;
+        font-family: Biryani;
+        font-weight: 900;
+        font-size: 3.34vw;
+        color: white;
+        text-shadow: 0px 1px 6px white;
+        animation-name: title;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes title {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .description {
+        position: relative;
+        left: 0vw;
+        opacity: 0;
+        font-family: Biryani;
+        font-weight: 100;
+        font-size: 1.2vw;
+        color: white;
+        text-shadow: 0px 1px 4px white;
+        animation: description 0.8s ease-out 0.4s forwards;
+    }
+
+    @keyframes description {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started {
+        position: absolute;
+        z-index: 1;
+        width: 12vw;
+        height: 3vw;
+        background-color: #713ee8;
+        text-shadow: 0px 0px 2px white;
+        font-family: Biryani;
+        font-weight: 400;
+        color: white;
+        font-size: 1vw;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .blic {
+        z-index: 0;
+        position: absolute;
+        left: 0vw;
+        top: 0.1vw;
+        width: 0.2vw;
+        height: 0.2vw;
+        background-color: white;
+        box-shadow: 0px 0px 6px white;
+        animation: blic 2s linear infinite;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes blic {
+        0% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            width: 0.2vw;
+            height: 3.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        40% {
+            width: 12.22vw;
+            height: 3.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        60% {
+            width: 0.2vw;
+            height: 3.2vw;
+            transform: translate(12vw, 0vw);
+        }
+        80% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(12vw, 1.5vw);
+            opacity: 0;
+        }
+        100% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+    }
+
+    .btn_container {
+        width: 12.2vw;
+        height: 3.2vw;
+        border-radius: 2px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        left: 0vw;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        animation: started 0.8s ease-out 0.8s forwards;
+    }
+
+    @keyframes started {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started:hover {
+        background-color: #5830b6;
+    }
+
+    footer {
+        width: 100%;
+        height: 5.21vw;
+        background-color: #201552;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_container {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 12vw;
+        height: 4vw;
+        pointer-events: none;
+    }
+
+    .footer_navigation {
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+    }
+
+    .footer_link {
+        text-decoration: dashed;
+        color: white;
+        font-weight: lighter;
+        font-size: 0.9vw;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .footer_link:hover {
+        color: rgb(126, 126, 126);
+    }
+
+    .footer_social_navigation {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .footer_social_btn {
+        width: 2.3vw;
+        height: 2.3vw;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .footer_social_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .footer_social_btn:nth-child(1) {
+        background-image: url(../welcome/logo_vk_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(2) {
+        background-image: url(../welcome/logo_telegram_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(3) {
+        background-image: url(../welcome/logo_email_welcome.svg);
+        background-size: cover;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../welcome/bg_welcome.png);
+        background-size: cover;
+        background-color: #25185d;
+    }
+
+    header {
+        width: 100%;
+        height: 2.1vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 5vw;
+        height: 1.5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 3vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .main_text {
+        display: grid;
+        grid-template-rows: 5vw 2vw;
+        justify-content: start;
+    }
+
+    .title {
+        position: relative;
+        left: 0vw;
+        font-family: Biryani;
+        font-weight: 900;
+        font-size: 3.34vw;
+        color: white;
+        text-shadow: 0px 1px 6px white;
+        animation-name: title;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes title {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .description {
+        position: relative;
+        left: 0vw;
+        opacity: 0;
+        font-family: Biryani;
+        font-weight: 100;
+        font-size: 1.2vw;
+        color: white;
+        text-shadow: 0px 1px 4px white;
+        animation: description 0.8s ease-out 0.4s forwards;
+    }
+
+    @keyframes description {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started {
+        position: absolute;
+        z-index: 1;
+        width: 12vw;
+        height: 3vw;
+        background-color: #713ee8;
+        text-shadow: 0px 0px 2px white;
+        font-family: Biryani;
+        font-weight: 400;
+        color: white;
+        font-size: 1vw;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .blic {
+        z-index: 0;
+        position: absolute;
+        left: 0vw;
+        top: 0.1vw;
+        width: 0.2vw;
+        height: 0.2vw;
+        background-color: white;
+        box-shadow: 0px 0px 6px white;
+        animation: blic 2s linear infinite;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes blic {
+        0% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            width: 0.2vw;
+            height: 3.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        40% {
+            width: 12.22vw;
+            height: 3.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        60% {
+            width: 0.2vw;
+            height: 3.2vw;
+            transform: translate(12vw, 0vw);
+        }
+        80% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(12vw, 1.5vw);
+            opacity: 0;
+        }
+        100% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+    }
+
+    .btn_container {
+        width: 12.2vw;
+        height: 3.2vw;
+        border-radius: 2px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        left: 0vw;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        animation: started 0.8s ease-out 0.8s forwards;
+    }
+
+    @keyframes started {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started:hover {
+        background-color: #5830b6;
+    }
+
+    footer {
+        width: 100%;
+        height: 5.21vw;
+        background-color: #201552;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_container {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 12vw;
+        height: 4vw;
+        pointer-events: none;
+    }
+
+    .footer_navigation {
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+    }
+
+    .footer_link {
+        text-decoration: dashed;
+        color: white;
+        font-weight: lighter;
+        font-size: 0.9vw;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .footer_link:hover {
+        color: rgb(126, 126, 126);
+    }
+
+    .footer_social_navigation {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .footer_social_btn {
+        width: 2.3vw;
+        height: 2.3vw;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .footer_social_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .footer_social_btn:nth-child(1) {
+        background-image: url(../welcome/logo_vk_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(2) {
+        background-image: url(../welcome/logo_telegram_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(3) {
+        background-image: url(../welcome/logo_email_welcome.svg);
+        background-size: cover;
+    }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../welcome/bg_welcome.png);
+        background-size: cover;
+        background-color: #25185d;
+    }
+
+    header {
+        width: 100%;
+        height: 2.5vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 6vw;
+        height: 2vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 4vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .main_text {
+        display: grid;
+        grid-template-rows: 6vw 2vw;
+        justify-content: start;
+    }
+
+    .title {
+        position: relative;
+        left: 0vw;
+        font-family: Biryani;
+        font-weight: 900;
+        font-size: 4vw;
+        color: white;
+        text-shadow: 0px 1px 6px white;
+        animation-name: title;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes title {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .description {
+        position: relative;
+        left: 0vw;
+        opacity: 0;
+        font-family: Biryani;
+        font-weight: 100;
+        font-size: 2vw;
+        color: white;
+        text-shadow: 0px 1px 4px white;
+        animation: description 0.8s ease-out 0.4s forwards;
+    }
+
+    @keyframes description {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started {
+        position: absolute;
+        z-index: 1;
+        width: 14vw;
+        height: 4vw;
+        background-color: #713ee8;
+        text-shadow: 0px 0px 2px white;
+        font-family: Biryani;
+        font-weight: 400;
+        color: white;
+        font-size: 1.5vw;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .blic {
+        z-index: 0;
+        position: absolute;
+        left: 0vw;
+        top: 0.1vw;
+        width: 0.2vw;
+        height: 0.2vw;
+        background-color: white;
+        box-shadow: 0px 0px 6px white;
+        animation: blic 2s linear infinite;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes blic {
+        0% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            width: 0.2vw;
+            height: 4.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        40% {
+            width: 14.22vw;
+            height: 4.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        60% {
+            width: 0.2vw;
+            height: 4.2vw;
+            transform: translate(14vw, 0vw);
+        }
+        80% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(14vw, 3vw);
+            opacity: 0;
+        }
+        100% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 3vw);
+            opacity: 0;
+        }
+    }
+
+    .btn_container {
+        width: 14.2vw;
+        height: 4.2vw;
+        border-radius: 2px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        left: 0vw;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        animation: started 0.8s ease-out 0.8s forwards;
+    }
+
+    @keyframes started {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started:hover {
+        background-color: #5830b6;
+    }
+
+    footer {
+        width: 100%;
+        height: 5.21vw;
+        background-color: #201552;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_container {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 12vw;
+        height: 4vw;
+        pointer-events: none;
+    }
+
+    .footer_navigation {
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+    }
+
+    .footer_link {
+        text-decoration: dashed;
+        color: white;
+        font-weight: lighter;
+        font-size: 1.5vw;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .footer_link:hover {
+        color: rgb(126, 126, 126);
+    }
+
+    .footer_social_navigation {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .footer_social_btn {
+        width: 3vw;
+        height: 3vw;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .footer_social_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .footer_social_btn:nth-child(1) {
+        background-image: url(../welcome/logo_vk_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(2) {
+        background-image: url(../welcome/logo_telegram_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(3) {
+        background-image: url(../welcome/logo_email_welcome.svg);
+        background-size: cover;
+    }
+}
+@media (min-width: 768px) and (max-width: 899px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../welcome/bg_welcome.png);
+        background-size: cover;
+        background-color: #25185d;
+    }
+
+    header {
+        width: 100%;
+        height: 2.5vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 6vw;
+        height: 2vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 4vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .main_text {
+        display: grid;
+        grid-template-rows: 6vw 2vw;
+        justify-content: start;
+    }
+
+    .title {
+        position: relative;
+        left: 0vw;
+        font-family: Biryani;
+        font-weight: 900;
+        font-size: 4vw;
+        color: white;
+        text-shadow: 0px 1px 6px white;
+        animation-name: title;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes title {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .description {
+        position: relative;
+        left: 0vw;
+        opacity: 0;
+        font-family: Biryani;
+        font-weight: 100;
+        font-size: 2vw;
+        color: white;
+        text-shadow: 0px 1px 4px white;
+        animation: description 0.8s ease-out 0.4s forwards;
+    }
+
+    @keyframes description {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started {
+        position: absolute;
+        z-index: 1;
+        width: 14vw;
+        height: 4vw;
+        background-color: #713ee8;
+        text-shadow: 0px 0px 2px white;
+        font-family: Biryani;
+        font-weight: 400;
+        color: white;
+        font-size: 1.5vw;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .blic {
+        z-index: 0;
+        position: absolute;
+        left: 0vw;
+        top: 0.1vw;
+        width: 0.2vw;
+        height: 0.2vw;
+        background-color: white;
+        box-shadow: 0px 0px 6px white;
+        animation: blic 2s linear infinite;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes blic {
+        0% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 1vw);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            width: 0.2vw;
+            height: 4.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        40% {
+            width: 14.22vw;
+            height: 4.2vw;
+            transform: translate(0vw, 0vw);
+        }
+        60% {
+            width: 0.2vw;
+            height: 4.2vw;
+            transform: translate(14vw, 0vw);
+        }
+        80% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(14vw, 3vw);
+            opacity: 0;
+        }
+        100% {
+            width: 0.2vw;
+            height: 0.2vw;
+            transform: translate(0vw, 3vw);
+            opacity: 0;
+        }
+    }
+
+    .btn_container {
+        width: 14.2vw;
+        height: 4.2vw;
+        border-radius: 2px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        left: 0vw;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        animation: started 0.8s ease-out 0.8s forwards;
+    }
+
+    @keyframes started {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started:hover {
+        background-color: #5830b6;
+    }
+
+    footer {
+        width: 100%;
+        height: 5.21vw;
+        background-color: #201552;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_container {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 12vw;
+        height: 4vw;
+        pointer-events: none;
+    }
+
+    .footer_navigation {
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+    }
+
+    .footer_link {
+        text-decoration: dashed;
+        color: white;
+        font-weight: lighter;
+        font-size: 1.5vw;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .footer_link:hover {
+        color: rgb(126, 126, 126);
+    }
+
+    .footer_social_navigation {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .footer_social_btn {
+        width: 3vw;
+        height: 3vw;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .footer_social_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .footer_social_btn:nth-child(1) {
+        background-image: url(../welcome/logo_vk_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(2) {
+        background-image: url(../welcome/logo_telegram_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(3) {
+        background-image: url(../welcome/logo_email_welcome.svg);
+        background-size: cover;
+    }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../welcome/bg_welcome.png);
+        background-size: cover;
+        background-color: #25185d;
+    }
+
+    header {
+        width: 100%;
+        height: 7vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 15vw;
+        height: 5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        text-decoration: none;
+        color: white;
+        font-size: 4vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 4vw 0vw;
+        display: grid;
+        gap: 16vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .main_text {
+        display: grid;
+        grid-template-rows: 35vw 2vw;
+        justify-content: start;
+    }
+
+    .title {
+        position: relative;
+        left: 0vw;
+        font-family: Biryani;
+        font-weight: 900;
+        font-size: 10vw;
+        color: white;
+        text-shadow: 0px 1px 6px white;
+        animation-name: title;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes title {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .description {
+        position: relative;
+        left: 0vw;
+        opacity: 0;
+        font-family: Biryani;
+        font-weight: 100;
+        font-size: 5vw;
+        color: white;
+        text-shadow: 0px 1px 4px white;
+        animation: description 0.8s ease-out 0.4s forwards;
+    }
+
+    @keyframes description {
+        0% {
+            opacity: 0;
+            left: -30vw;
+        }
+
+        100% {
+            opacity: 1;
+            left: 0vw;
+        }
+    }
+
+    .btn_started {
+        position: absolute;
+        z-index: 1;
+        width: 36vw;
+        height: 9vw;
+        background-color: #713ee8;
+        text-shadow: 0px 0px 3px white;
+        font-family: Biryani;
+        font-weight: 400;
+        color: white;
+        font-size: 3vw;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .blic {
+        z-index: 0;
+        position: absolute;
+        left: 0vw;
+        top: 0.3vw;
+        width: 0.6vw;
+        height: 0.6vw;
+        background-color: white;
+        box-shadow: 0px 0px 10px white;
+        animation: blic 2s linear infinite;
+        transform-origin: 50% 50%;
+    }
+
+    @keyframes blic {
+        0% {
+            width: 0.6vw;
+            height: 0.6vw;
+            transform: translate(0vw, 3vw);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            width: 0.6vw;
+            height: 9.6vw;
+            transform: translate(0vw, 0vw);
+        }
+        40% {
+            width: 36.66vw;
+            height: 9.6vw;
+            transform: translate(0vw, 0vw);
+        }
+        60% {
+            width: 0.6vw;
+            height: 9.6vw;
+            transform: translate(36vw, 0vw);
+        }
+        80% {
+            width: 0.6vw;
+            height: 0.6vw;
+            transform: translate(36vw, 4.5vw);
+            opacity: 0;
+        }
+        100% {
+            width: 0.6vw;
+            height: 0.6vw;
+            transform: translate(0vw, 3vw);
+            opacity: 0;
+        }
+    }
+
+    .btn_container {
+        width: 36.6vw;
+        height: 9.6vw;
+        border-radius: 6px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        left: 0vw;
+        background-color: rgba(255, 255, 255, 0);
+        animation: started 0.8s ease-out 0.8s forwards;
+    }
+
+    .btn_started:hover {
+        background-color: #5830b6;
+    }
+
+    footer {
+        width: 100%;
+        height: fit-content;
+        background-color: #201552;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2vw 0vw 2vw 0vw;
+    }
+
+    .footer_container {
+        width: 80%;
+        height: fit-content;
+        display: grid;
+        gap: 4vw;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .footer_logo {
+        order: 3;
+        width: 21vw;
+        height: 7vw;
+        pointer-events: none;
+    }
+
+    .footer_navigation {
+        order: 1;
+        display: grid;
+        justify-items: center;
+        gap: 4vw;
+        align-items: center;
+    }
+
+    .footer_link {
+        text-decoration: dashed;
+        color: white;
+        font-weight: lighter;
+        font-size: 2.5vw;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .footer_link:hover {
+        color: rgb(126, 126, 126);
+    }
+
+    .footer_social_navigation {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .footer_social_btn {
+        width: 6vw;
+        height: 6vw;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .footer_social_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .footer_social_btn:nth-child(1) {
+        background-image: url(../welcome/logo_vk_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(2) {
+        background-image: url(../welcome/logo_telegram_welcome.svg);
+        background-size: cover;
+    }
+    .footer_social_btn:nth-child(3) {
+        background-image: url(../welcome/logo_email_welcome.svg);
+        background-size: cover;
+    }
+}

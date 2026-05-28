@@ -1,0 +1,1883 @@
+@media (min-width: 1920px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        width: 100%;
+        height: 2.1vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 5vw;
+        height: 1.5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: grid;
+        align-content: center;
+        gap: 2vw;
+        justify-items: center;
+    }
+
+    .content_container {
+        display: grid;
+        gap: 1vw;
+        justify-items: center;
+        background-color: rgb(230, 230, 230);
+        padding: 1vw 4vw 1vw 4vw;
+    }
+
+    .main_container {
+        width: 82%;
+        height: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-content: center;
+        align-content: end;
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    .profile_title {
+        font-family: "Biryani";
+        font-weight: 700;
+        font-size: 1.5vw;
+        color: rgb(43, 40, 40);
+    }
+
+    .profile_subtitle {
+        width: 25vw;
+        font-family: "Heebo";
+        font-weight: 100;
+        font-size: 1vw;
+        color: rgb(53, 52, 52);
+    }
+
+    .input {
+        width: 18.2vw;
+        height: 2.1vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 0.7vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .btn_save {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_save:hover {
+        background-color: #4369e4;
+    }
+    .btn_delete {
+        width: 8.2vw;
+        height: 1.7vw;
+        background-color: #da3227;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_delete:hover {
+        background-color: #a8271e;
+    }
+
+    .btn_cancel {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: rgb(87, 83, 83);
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 200;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background-color: rgb(43, 41, 41);
+    }
+
+    #modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.486);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+        border: solid 0.1vw #f13629;
+    }
+
+    .form {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .edit_container {
+        width: 30vw;
+        height: 20vw;
+        display: grid;
+        gap: 0vw;
+        background-color: rgb(255, 255, 255);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        transition: 0.3s;
+    }
+
+    .edit_container:hover {
+        transform: scale(1.05);
+    }
+
+    .user_info {
+        width: 30vw;
+        height: fit-content;
+        background-color: #2a2626;
+        border-radius: 0.2vw;
+        display: grid;
+        gap: 0.5vw;
+        justify-content: start;
+        align-items: end;
+        padding: 1vw 1vw 1vw 1vw;
+        border-radius: 0.4vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .btn_upload {
+        display: none;
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_upload:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_file {
+        display: none;
+    }
+
+    .avatar {
+        width: 15vw;
+        height: 15vw;
+        border: solid 0.1vw blueviolet;
+        border-radius: 1vw;
+    }
+
+    .img_avatar {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 1vw;
+    }
+
+    .user_name {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        text-align: start;
+        color: rgb(43, 43, 43);
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .user_email {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 100;
+        color: rgb(43, 43, 43);
+        font-size: 0.7vw;
+        text-align: start;
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .img_user_info {
+        display: flex;
+        align-items: end;
+        gap: 0.5vw;
+    }
+
+    .user_date {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .header_user_data {
+        display: flex;
+    }
+
+    .header_user_name {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 0.8vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .header_img_user {
+        width: 1.5vw;
+        height: 1.5vw;
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .header_user_data {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+        padding: 0vw 0.5vw 0vw 0.5vw;
+    }
+    .header_user_data:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        width: 100%;
+        height: 2.1vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 5vw;
+        height: 1.5vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 1vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: grid;
+        align-content: center;
+        gap: 2vw;
+        justify-items: center;
+    }
+
+    .content_container {
+        display: grid;
+        gap: 1vw;
+        justify-items: center;
+        background-color: rgb(230, 230, 230);
+        padding: 1vw 4vw 1vw 4vw;
+    }
+
+    .main_container {
+        width: 82%;
+        height: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-content: center;
+        align-content: end;
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    .profile_title {
+        font-family: "Biryani";
+        font-weight: 700;
+        font-size: 1.5vw;
+        color: rgb(43, 40, 40);
+    }
+
+    .profile_subtitle {
+        width: 25vw;
+        font-family: "Heebo";
+        font-weight: 100;
+        font-size: 1vw;
+        color: rgb(53, 52, 52);
+    }
+
+    .input {
+        width: 18.2vw;
+        height: 2.1vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 0.7vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .btn_save {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_save:hover {
+        background-color: #4369e4;
+    }
+    .btn_delete {
+        width: 8.2vw;
+        height: 1.7vw;
+        background-color: #da3227;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_delete:hover {
+        background-color: #a8271e;
+    }
+
+    .btn_cancel {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: rgb(87, 83, 83);
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 200;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background-color: rgb(43, 41, 41);
+    }
+
+    #modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.486);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+        border: solid 0.1vw #f13629;
+    }
+
+    .form {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .edit_container {
+        width: 30vw;
+        height: 20vw;
+        display: grid;
+        gap: 0vw;
+        background-color: rgb(255, 255, 255);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        transition: 0.3s;
+    }
+
+    .edit_container:hover {
+        transform: scale(1.05);
+    }
+
+    .user_info {
+        width: 30vw;
+        height: fit-content;
+        background-color: #2a2626;
+        border-radius: 0.2vw;
+        display: grid;
+        gap: 1vw;
+        justify-content: start;
+        align-items: end;
+        padding: 1vw 1vw 1vw 1vw;
+        border-radius: 0.4vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .btn_upload {
+        display: none;
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_upload:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_file {
+        display: none;
+    }
+
+    .avatar {
+        width: 15vw;
+        height: 15vw;
+        border: solid 0.1vw blueviolet;
+        border-radius: 1vw;
+    }
+
+    .img_avatar {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 1vw;
+    }
+
+    .user_name {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        text-align: start;
+        color: rgb(43, 43, 43);
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .user_email {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 100;
+        color: rgb(43, 43, 43);
+        font-size: 0.7vw;
+        text-align: start;
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .img_user_info {
+        display: flex;
+        align-items: end;
+        gap: 0.5vw;
+    }
+
+    .user_date {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .header_user_data {
+        display: flex;
+    }
+
+    .header_user_name {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 1vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .header_img_user {
+        width: 1.5vw;
+        height: 1.5vw;
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .header_user_data {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+        padding: 0vw 0.5vw 0vw 0.5vw;
+    }
+    .header_user_data:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        width: 100%;
+        height: 2.5vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 6vw;
+        height: 2vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 4vw;
+        justify-content: start;
+        align-content: end;
+    }
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: grid;
+        align-content: center;
+        gap: 2vw;
+        justify-items: center;
+    }
+
+    .content_container {
+        display: grid;
+        gap: 1vw;
+        justify-items: center;
+        background-color: rgb(230, 230, 230);
+        padding: 1vw 4vw 1vw 4vw;
+    }
+
+    .main_container {
+        width: 82%;
+        height: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-content: center;
+        align-content: end;
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    .profile_title {
+        font-family: "Biryani";
+        font-weight: 700;
+        font-size: 1.5vw;
+        color: rgb(43, 40, 40);
+    }
+
+    .profile_subtitle {
+        width: 25vw;
+        font-family: "Heebo";
+        font-weight: 100;
+        font-size: 1vw;
+        color: rgb(53, 52, 52);
+    }
+
+    .input {
+        width: 18.2vw;
+        height: 2.1vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 0.7vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .btn_save {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_save:hover {
+        background-color: #4369e4;
+    }
+    .btn_delete {
+        width: 8.2vw;
+        height: 1.7vw;
+        background-color: #da3227;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_delete:hover {
+        background-color: #a8271e;
+    }
+
+    .btn_cancel {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: rgb(87, 83, 83);
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 200;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background-color: rgb(43, 41, 41);
+    }
+
+    #modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.486);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+        border: solid 0.1vw #f13629;
+    }
+
+    .form {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .edit_container {
+        width: 30vw;
+        height: fit-content;
+        display: grid;
+        gap: 0vw;
+        background-color: rgb(255, 255, 255);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        transition: 0.3s;
+    }
+
+    .edit_container:hover {
+        transform: scale(1.05);
+    }
+
+    .user_info {
+        width: 30vw;
+        height: fit-content;
+        background-color: #2a2626;
+        border-radius: 0.2vw;
+        display: grid;
+        gap: 1vw;
+        justify-content: start;
+        align-items: end;
+        padding: 1vw 1vw 1vw 1vw;
+        border-radius: 0.4vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .btn_upload {
+        display: none;
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_upload:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_file {
+        display: none;
+    }
+
+    .avatar {
+        width: 15vw;
+        height: 15vw;
+        border: solid 0.1vw blueviolet;
+        border-radius: 1vw;
+    }
+
+    .img_avatar {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 1vw;
+    }
+
+    .user_name {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        text-align: start;
+        color: rgb(43, 43, 43);
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .user_email {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 100;
+        color: rgb(43, 43, 43);
+        font-size: 0.7vw;
+        text-align: start;
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .img_user_info {
+        display: flex;
+        align-items: end;
+        gap: 0.5vw;
+    }
+
+    .user_date {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .header_user_data {
+        display: flex;
+    }
+
+    .header_user_name {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .header_img_user {
+        width: 1.5vw;
+        height: 1.5vw;
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .header_user_data {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+        padding: 0vw 0.5vw 0vw 0.5vw;
+    }
+    .header_user_data:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+}
+@media (min-width: 768px) and (max-width: 899px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        width: 100%;
+        height: 2.5vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 6vw;
+        height: 2vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 4vw;
+        justify-content: start;
+        align-content: end;
+    }
+    main {
+        width: 100%;
+        flex: 1;
+        width: 100%;
+        display: grid;
+        align-content: center;
+        gap: 2vw;
+        justify-items: center;
+    }
+
+    .content_container {
+        display: grid;
+        gap: 1vw;
+        justify-items: center;
+        background-color: rgb(230, 230, 230);
+        padding: 1vw 4vw 1vw 4vw;
+    }
+
+    .main_container {
+        width: 82%;
+        height: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-content: center;
+        align-content: end;
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    .profile_title {
+        font-family: "Biryani";
+        font-weight: 700;
+        font-size: 2.5vw;
+        color: rgb(43, 40, 40);
+    }
+
+    .profile_subtitle {
+        width: 35vw;
+        font-family: "Heebo";
+        font-weight: 100;
+        font-size: 1.5vw;
+        color: rgb(53, 52, 52);
+    }
+
+    .input {
+        width: 22.2vw;
+        height: 2.5vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .btn_save {
+        width: 4.2vw;
+        height: 2vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_save:hover {
+        background-color: #4369e4;
+    }
+    .btn_delete {
+        width: 8.2vw;
+        height: 1.7vw;
+        background-color: #da3227;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_delete:hover {
+        background-color: #a8271e;
+    }
+
+    .btn_cancel {
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: rgb(87, 83, 83);
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 200;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background-color: rgb(43, 41, 41);
+    }
+
+    #modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.486);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+        border: solid 0.1vw #f13629;
+    }
+
+    .form {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .edit_container {
+        width: 40vw;
+        height: fit-content;
+        display: grid;
+        gap: 0vw;
+        background-color: rgb(255, 255, 255);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        transition: 0.3s;
+    }
+
+    .edit_container:hover {
+        transform: scale(1.05);
+    }
+
+    .user_info {
+        width: 40vw;
+        height: fit-content;
+        background-color: #2a2626;
+        border-radius: 0.2vw;
+        display: grid;
+        gap: 1vw;
+        justify-content: start;
+        align-items: start;
+        padding: 1vw 1vw 1vw 1vw;
+        border-radius: 0.4vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .btn_upload {
+        display: none;
+        width: 4.2vw;
+        height: 1.7vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_upload:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_file {
+        display: none;
+    }
+
+    .avatar {
+        width: 20vw;
+        height: 20vw;
+        border: solid 0.1vw blueviolet;
+        border-radius: 1vw;
+    }
+
+    .img_avatar {
+        width: 20vw;
+        height: 20vw;
+        border-radius: 1vw;
+    }
+
+    .user_name {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1.5vw;
+        text-align: start;
+        color: rgb(43, 43, 43);
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .user_email {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 100;
+        color: rgb(43, 43, 43);
+        font-size: 1vw;
+        text-align: start;
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .img_user_info {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: end;
+        gap: 1vw;
+    }
+
+    .user_date {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .header_user_data {
+        display: flex;
+    }
+
+    .header_user_name {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .header_img_user {
+        width: 1.5vw;
+        height: 1.5vw;
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .header_user_data {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+        padding: 0vw 0.5vw 0vw 0.5vw;
+    }
+    .header_user_data:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Light.ttf") format("truetype");
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "AdventPro";
+        src: url("/fonts/AdventPro-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Regular.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        background-color: #f5f5f5;
+    }
+
+    .header {
+        width: 100%;
+        height: 5.5vw;
+        background-color: #25185d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_logo {
+        width: 6vw;
+        height: 2vw;
+        pointer-events: none;
+    }
+
+    .header_container {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_link {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 2.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+        padding: 0.2vw 0.7vw 0.2vw 0.7vw;
+    }
+
+    .header_link:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+
+    .header_navigation {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main {
+        width: 100%;
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main_container {
+        width: 82%;
+        height: 80%;
+        padding: 4vw 0vw 0vw 0vw;
+        display: grid;
+        gap: 4vw;
+        justify-content: start;
+        align-content: end;
+    }
+
+    .content_container {
+        height: fit-content;
+        display: grid;
+        gap: 1vw;
+        justify-items: center;
+        background-color: rgb(230, 230, 230);
+        padding: 1vw 4vw 1vw 4vw;
+    }
+
+    .main_container {
+        width: 82%;
+        height: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-content: center;
+        align-content: end;
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    .profile_title {
+        font-family: "Biryani";
+        font-weight: 700;
+        font-size: 3.5vw;
+        color: rgb(43, 40, 40);
+    }
+
+    .profile_subtitle {
+        width: 35vw;
+        font-family: "Heebo";
+        font-weight: 100;
+        font-size: 2.5vw;
+        color: rgb(53, 52, 52);
+    }
+
+    .input {
+        width: 32.2vw;
+        height: 3.5vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 0.2vw solid #6b8dff;
+    }
+
+    .btn_save {
+        width: 6vw;
+        height: 3vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 2vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_save:hover {
+        background-color: #4369e4;
+    }
+    .btn_delete {
+        width: 12.2vw;
+        height: 2.7vw;
+        background-color: #da3227;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_delete:hover {
+        background-color: #a8271e;
+    }
+
+    .btn_cancel {
+        width: 12.2vw;
+        height: 2.7vw;
+        background-color: rgb(87, 83, 83);
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 200;
+        font-size: 2vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background-color: rgb(43, 41, 41);
+    }
+
+    #modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.486);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+        border: solid 0.1vw #f13629;
+    }
+
+    .form {
+        height: fit-content;
+        display: grid;
+        align-items: center;
+        gap: 1.5vw;
+    }
+
+    .edit_container {
+        width: 50vw;
+        height: fit-content;
+        display: grid;
+        align-content: start;
+        gap: 0.5vw;
+        padding: 0.5vw;
+        background-color: rgb(255, 255, 255);
+        padding: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        transition: 0.3s;
+    }
+
+    .form_container {
+        display: grid;
+        align-items: center;
+    }
+
+    .edit_container:hover {
+        transform: scale(1.05);
+    }
+
+    .user_info {
+        width: 50vw;
+        height: 35vw;
+        background-color: #2a2626;
+        border-radius: 0.2vw;
+        display: grid;
+        gap: 1vw;
+        justify-content: start;
+        align-items: start;
+        padding: 1vw 1vw 1vw 1vw;
+        border-radius: 0.4vw;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .btn_upload {
+        display: none;
+        width: 8.2vw;
+        height: 3vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 2vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+
+    .btn_upload:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_file {
+        display: none;
+    }
+
+    .avatar {
+        width: 25vw;
+        height: 25vw;
+        border: solid 0.1vw blueviolet;
+        border-radius: 1vw;
+    }
+
+    .img_avatar {
+        width: 25vw;
+        height: 25vw;
+        border-radius: 1vw;
+    }
+
+    .user_name {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 700;
+        font-size: 2.5vw;
+        text-align: start;
+        color: rgb(43, 43, 43);
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .user_email {
+        width: fit-content;
+        font-family: "Heebo";
+        font-weight: 100;
+        color: rgb(43, 43, 43);
+        font-size: 1vw;
+        text-align: start;
+        background-color: white;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.2vw;
+    }
+
+    .img_user_info {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: end;
+        gap: 1vw;
+    }
+
+    .user_date {
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .header_user_data {
+        display: flex;
+    }
+
+    .header_user_name {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 2.5vw;
+        font-weight: 700;
+        font-family: "AdventPro";
+        transition: 0.3s;
+    }
+
+    .header_img_user {
+        width: 2.5vw;
+        height: 2.5vw;
+        border-radius: 100%;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .header_user_data {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        padding: 0vw 0.5vw 0vw 0.5vw;
+    }
+    .header_user_data:hover {
+        color: #e9e9e9;
+        background-color: #2d1e70;
+    }
+}

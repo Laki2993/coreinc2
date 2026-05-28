@@ -1,0 +1,1078 @@
+@media (min-width: 1920px) {
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Light.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(../signup/bg_signup.jpg);
+        background-size: cover;
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    aside {
+        width: 25vw;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: 2vw;
+        background-image: url(../signup/bg_form_signup.jpg);
+        background-size: cover;
+        padding-top: 6vw;
+    }
+
+    .form_logo {
+        width: 2.9vw;
+        height: 2.9vw;
+    }
+
+    .input {
+        width: 18.2vw;
+        height: 2.1vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 0.7vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .checkbox_container {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5vw;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .form_container {
+        width: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-items: start;
+    }
+
+    .main_form {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .special_link {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 0.6vw;
+        text-decoration: none;
+        color: #6b8eff9f;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .special_link_my {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 0.6vw;
+        text-decoration: none;
+        color: #3535359f;
+        transition: 0.3s;
+    }
+
+    .special_link:hover {
+        color: #536ec7;
+    }
+
+    .btn_signup {
+        width: 9.4vw;
+        height: 2.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.2vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_signup:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_reset {
+        width: 18.3vw;
+        height: 2.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_reset:hover {
+        background-color: #4369e4;
+    }
+
+    .info {
+        width: 1.2vw;
+        height: 1.2vw;
+        transition: 0.3s;
+    }
+
+    .info:hover {
+        transform: scale(1.1);
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+
+    .accessibility_features {
+        width: 1.2vw;
+        height: 1.2vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    strong {
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        color: #c2bbbb;
+        white-space: nowrap;
+    }
+
+    .special_text {
+        display: flex;
+        gap: 0.5vw;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .form_description {
+        width: 20vw;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        padding: 1vw;
+        color: white;
+        background-color: rgba(26, 88, 146, 0.747);
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+    }
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Light.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(../signup/bg_signup.jpg);
+        background-size: cover;
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    aside {
+        width: 25vw;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: 2vw;
+        background-image: url(../signup/bg_form_signup.jpg);
+        background-size: cover;
+        padding-top: 6vw;
+    }
+
+    .form_logo {
+        width: 2.9vw;
+        height: 2.9vw;
+    }
+
+    .input {
+        width: 18.2vw;
+        height: 2.1vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 0.7vw;
+        border-radius: 0.2vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .form_container {
+        width: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-items: start;
+    }
+
+    .main_form {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .special_link {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 0.7vw;
+        text-decoration: none;
+        color: #6b8eff9f;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .special_link:hover {
+        color: #536ec7;
+    }
+
+    .special_link_my {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 1vw;
+        text-decoration: none;
+        color: #3535359f;
+        transition: 0.3s;
+    }
+
+    .checkbox_container {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5vw;
+    }
+
+    .btn_signup {
+        width: 9.4vw;
+        height: 2.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.2vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_signup:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_reset {
+        width: 18.3vw;
+        height: 2.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_reset:hover {
+        background-color: #4369e4;
+    }
+
+    .info {
+        width: 1.2vw;
+        height: 1.2vw;
+        transition: 0.3s;
+    }
+
+    .info:hover {
+        transform: scale(1.1);
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+
+    .accessibility_features {
+        width: 1.2vw;
+        height: 1.2vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    strong {
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.2vw;
+        color: #c2bbbb;
+        white-space: nowrap;
+    }
+
+    .special_text {
+        display: flex;
+        gap: 0.5vw;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .form_description {
+        width: 20vw;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1vw;
+        padding: 1vw;
+        color: white;
+        background-color: rgba(26, 88, 146, 0.747);
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+    }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Light.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(../signup/bg_signup.jpg);
+        background-size: cover;
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    aside {
+        width: 40vw;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: 2vw;
+        background-image: url(../signup/bg_form_signup.jpg);
+        background-size: cover;
+        padding-top: 18vw;
+    }
+
+    .form_logo {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .input {
+        width: 27.2vw;
+        height: 3vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 1vw;
+        border-radius: 0.3vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .form_container {
+        width: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-items: start;
+    }
+
+    .main_form {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        gap: 1.5vw;
+    }
+
+    .special_link {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 1vw;
+        text-decoration: none;
+        color: #6b8eff9f;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .special_link:hover {
+        color: #536ec7;
+    }
+
+    .special_link_my {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 1.2vw;
+        text-decoration: none;
+        color: #3535359f;
+        transition: 0.3s;
+    }
+
+    .checkbox_container {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5vw;
+    }
+
+    .btn_signup {
+        width: 12.4vw;
+        height: 3.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_signup:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_reset {
+        width: 27.3vw;
+        height: 3vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_reset:hover {
+        background-color: #4369e4;
+    }
+
+    .info {
+        width: 1.5vw;
+        height: 1.5vw;
+        transition: 0.3s;
+    }
+
+    .info:hover {
+        transform: scale(1.1);
+    }
+
+    .accessibility_features {
+        width: 1.5vw;
+        height: 1.5vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    strong {
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.2vw;
+        color: #c2bbbb;
+        white-space: nowrap;
+    }
+
+    .special_text {
+        display: flex;
+        gap: 0.5vw;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .form_description {
+        width: 27.2vw;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        padding: 1vw;
+        color: white;
+        background-color: rgba(26, 88, 146, 0.747);
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+    }
+}
+@media (min-width: 768px) and (max-width: 899px) {
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Light.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(../signup/bg_signup.jpg);
+        background-size: cover;
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    aside {
+        width: 40vw;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: 4vw;
+        background-image: url(../signup/bg_form_signup.jpg);
+        background-size: cover;
+        padding-top: 20vw;
+    }
+
+    .form_logo {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .input {
+        width: 27.2vw;
+        height: 4.1vw;
+        padding-left: 0.5vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 1.4vw;
+        border-radius: 0.3vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .form_container {
+        width: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-items: start;
+    }
+
+    .main_form {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        gap: 1.5vw;
+    }
+
+    .special_link {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 1vw;
+        text-decoration: none;
+        color: #6b8eff9f;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .special_link:hover {
+        color: #536ec7;
+    }
+
+    .special_link_my {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 1.2vw;
+        text-decoration: none;
+        color: #3535359f;
+        transition: 0.3s;
+    }
+
+    .checkbox_container {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5vw;
+    }
+
+    .btn_signup {
+        width: 12.4vw;
+        height: 3.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_signup:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_reset {
+        width: 27.3vw;
+        height: 3.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_reset:hover {
+        background-color: #4369e4;
+    }
+
+    .info {
+        width: 1.5vw;
+        height: 1.5vw;
+        transition: 0.3s;
+    }
+
+    .info:hover {
+        transform: scale(1.1);
+    }
+
+    .accessibility_features {
+        width: 1.5vw;
+        height: 1.5vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    strong {
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.2vw;
+        color: #c2bbbb;
+        white-space: nowrap;
+    }
+
+    .special_text {
+        display: flex;
+        gap: 0.5vw;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .form_description {
+        width: 27.2vw;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 1.5vw;
+        padding: 1vw;
+        color: white;
+        background-color: rgba(26, 88, 146, 0.747);
+        border-radius: 0.2vw;
+        backdrop-filter: blur(20px);
+    }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-SemiBold.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Heebo";
+        src: url("/fonts/Heebo-Thin.ttf") format("truetype");
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Biryani";
+        src: url("/fonts/Biryani-Light.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(../signup/bg_signup.jpg);
+        background-size: cover;
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    aside {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: 20vw;
+        background-image: url(../signup/bg_form_signup.jpg);
+        background-size: cover;
+        padding-top: 17vw;
+    }
+
+    .form_logo {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .input {
+        width: 81.2vw;
+        height: 9.1vw;
+        padding-left: 2vw;
+        font-family: Biryani;
+        font-weight: 200;
+        font-size: 3vw;
+        color: #9d9292;
+        border-radius: 1vw;
+        border: none;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .input:focus {
+        outline: 2px solid #6b8dff;
+    }
+
+    .form_container {
+        width: 100%;
+        display: grid;
+        gap: 1vw;
+        justify-items: start;
+    }
+
+    .main_form {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        gap: 5vw;
+    }
+
+    .special_link {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 3vw;
+        text-decoration: none;
+        color: #6b8eff9f;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .special_link:hover {
+        color: #536ec7;
+    }
+
+    .special_link_my {
+        font-family: Heebo;
+        font-weight: 100;
+        font-size: 3vw;
+        text-decoration: none;
+        color: #3535359f;
+        transition: 0.3s;
+    }
+
+    .checkbox_container {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5vw;
+    }
+
+    .btn_signup {
+        width: 44.4vw;
+        height: 10.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 5vw;
+        border-radius: 1vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_signup:hover {
+        background-color: #4369e4;
+    }
+
+    .btn_reset {
+        width: 80.7vw;
+        height: 10.6vw;
+        background-color: #6b8dff;
+        color: white;
+        border: none;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 4vw;
+        border-radius: 0.2vw;
+        box-shadow:
+            #a3bdff 0px 6px 12px -2px,
+            #a3bdff 0px 3px 7px -3px;
+        transition: 0.3s;
+    }
+
+    .btn_reset:hover {
+        background-color: #4369e4;
+    }
+
+    .info {
+        width: 5vw;
+        height: 5vw;
+        transition: 0.3s;
+    }
+
+    .info:hover {
+        transform: scale(1.1);
+    }
+
+    .accessibility_features {
+        width: 5vw;
+        height: 5vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 2vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    strong {
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 5vw;
+        color: #c2bbbb;
+        white-space: nowrap;
+    }
+
+    .special_text {
+        display: flex;
+        gap: 3vw;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .form_description {
+        width: 80.2vw;
+        font-family: "Heebo";
+        font-weight: 900;
+        font-size: 5vw;
+        padding: 1.2vw;
+        color: white;
+        background-color: rgba(26, 88, 146, 0.747);
+        border-radius: 2vw;
+        backdrop-filter: blur(20px);
+    }
+}
