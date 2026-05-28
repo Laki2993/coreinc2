@@ -19,6 +19,7 @@
     </dialog>
     <header>
         <section class="header_container">
+            <p>tesdsdsdasascascsacsdst</p>
             <img class="header_logo" src="{{ asset('welcome\logo_core_header.svg') }}" alt="">
                 <nav class="header_navigation">
                         <a class="header_link" href="{{ url('/dashboard') }}">main</a>
