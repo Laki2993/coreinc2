@@ -10,6 +10,7 @@ class Project extends Model
         'unique_id',
         'title',
         'description',
+        'img',
         'user_id',
     ];
 

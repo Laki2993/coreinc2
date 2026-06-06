@@ -15,9 +15,7 @@
                         <a class="header_link" href="{{ url('/dashboard') }}">main</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <a class="header_link" :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            <a class="header_link" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
                                 {{ __('log out') }}
                             </a>
                         </form>
@@ -51,11 +49,21 @@
 
     <section class="cards_container">
 @foreach ($projects as $project)
+
     <article class="card" data-unique="{{ $project->unique_id }}">
         <strong>{{ $project->title }}</strong>
+        <section class="bg_project">
+           <p class="Project_marker_img">{{ $project->img }}</p>
+           <article class="Project_description_container">
+                <p class="Project_description_text">{{ $project->description }}</p>
+           </article>
+        </section>
         <article class="project_bar">
-            <p>{{ $project->user->name }}</p>
-            <p class="project_id">project id-{{ $project->unique_id }}</p>
+            <article class="project_bar">
+                <p class="project_admin">admin - {{ $project->user->name }}</p>
+                <p class="project_Date">admin - {{ $project->created_at }}</p>
+            </article>
+            <button class="info">•••</button>
         </article>
     </article>
 @endforeach
@@ -105,13 +113,56 @@
             }
         })
 
-document.querySelectorAll('.card').forEach(item => {
+
+
+        let markers = document.querySelectorAll('.Project_marker_img');
+        let bgElements = document.querySelectorAll('.bg_project');
+
+        markers.forEach((marker, i) => {
+            let bg = bgElements[i];
+            if (!bg) return;
+        
+            let val = marker.textContent.trim();
+        
+            const images = {
+                '1': "url('../backgroundProject/backgroundContentColor.svg')",
+                '2': "url('../backgroundProject/BackgroundTextColor.svg')",
+                '3': "url('../backgroundProject/BackgroundContentNoneGorizont.svg')",
+                '4': "url('../backgroundProject/BackgroundContentNoneVertical.svg')"
+            };
+        
+            if (images[val]) {
+                bg.style.backgroundImage = images[val];
+            }
+        });
+
+document.querySelectorAll('.info').forEach(item => {
     item.addEventListener('click', function() {
+        let parent = this.closest('.card');
+        let container = parent.querySelector('.Project_description_container');
+        let projectDate = parent.querySelector('.project_Date');
+        
+        if (container.style.height === "100%") {
+            container.style.height = "0%";
+            container.style.padding = "0vw";
+            if (projectDate) projectDate.style.display = "none";
+        } else {
+            container.style.height = "100%";
+            container.style.padding = "0.5vw";
+            if (projectDate) projectDate.style.display = "flex";
+        }
+    });
+});
+
+document.querySelectorAll('.card').forEach(item => {
+    item.addEventListener('click', function(event) {
+        if (event.target.closest('button, .btn_upload, .btn_form_create, .btn_join, .btn_create_project')) {
+            return;
+        }
         const uniqueId = this.dataset.unique;
         window.location.href = '/projectboard/' + uniqueId;
     });
 });
-
     </script>
 </body>
 </html>

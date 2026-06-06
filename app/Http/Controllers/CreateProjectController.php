@@ -21,6 +21,7 @@ public function createProject(Request $request)
         'unique_id' => Str::random(10),
         'title' => $request->project_title,
         'description' => $request->project_description,
+        'img' => rand(1, 4),
     ]);
 
     $project->users()->attach(auth()->id(), ['role' => 'admin']);
