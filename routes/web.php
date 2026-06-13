@@ -8,6 +8,7 @@ use App\Http\Controllers\GetProjectController;
 use App\Http\Controllers\EnterProjectController;
 use App\Http\Controllers\JoinProjectController;
 use App\Http\Controllers\CreateTaskController;
+use App\Http\Controllers\TaskCrudController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,17 +18,17 @@ Route::post('/projectboard/join', [JoinProjectController::class, 'join'])
     ->middleware(['auth', 'verified'])
     ->name('projectboard.join');
 
-    // Потом динамический роут (с параметром)
     Route::get('/projectboard/{unique_id}', [EnterProjectController::class, 'enterProject'])
         ->middleware(['auth', 'verified'])
         ->name('projectboard.enter');
 
 
-// Сначала конкретный роут (без параметров)
 Route::post('/projectboard/{unique_id}/tasks', [CreateTaskController::class, 'createTask'])
     ->middleware(['auth', 'verified'])
     ->name('projectboard.createtask');
 
+Route::delete('/tasks/{task}', [TaskCrudController::class, 'destroy'])->name('tasks.destroy');
+Route::delete('/project/{project}', [CreateProjectController::class, 'destroyProject'])->name('project.destroy');
 
 
 

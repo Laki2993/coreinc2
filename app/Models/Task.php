@@ -10,10 +10,15 @@ class Task extends Model
         'title',
         'description',
         'project_id',
+        'user_id',
     ]);
 
     public function project(){
-        return $this->hasMany(Project::class);
+        return $this->belongsTo(Project::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 }

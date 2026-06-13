@@ -17,9 +17,9 @@ public function enterProject($unique_id)
     $isMember = $projects->users()->where('user_id', auth()->id())->exists();
 
     if (!$isMember) {
-        return redirect()->route('dashboard')->with('error', 'У вас нет доступа к этому проекту');
+        return redirect()->route('dashboard')->with('error', 'You dont have access to this project.');
     }
 
-    return view('projectboard', compact('projects'));
+    return view('projectboard', compact('projects'))->with('enterMessage','welcome to ');
 }
 }

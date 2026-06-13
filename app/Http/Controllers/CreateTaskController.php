@@ -15,18 +15,25 @@ class CreateTaskController extends Controller
         'task_description' => 'nullable|string|max:255',  // описание может быть пустым
     ]);
 
-    // Находим проект по unique_id
     $project = Project::where('unique_id', $unique_id)->firstOrFail();
 
-    $task = Task::create([
-        'title' => $request->task_title,
-        'description' => $request->task_description,
-        'project_id' => $project->id,  // ← берём ID из найденного проекта
-        'status' => 'todo',
-    ]);
+    $isAdmin = $project->users()->where('user_id',auth()->id())->where('role', 'admin')->exists();
 
-    return redirect()->route('projectboard.enter', $project->unique_id)
-                     ->with('success', 'Задача создана');
+    if($isAdmin){
+        $task = Task::create([
+            'title' => $request->task_title,
+            'description' => $request->task_description,
+            'project_id' => $project->id,  // ← берём ID из найденного проекта
+            'user_id' => auth()->id(),
+            'status' => 'todo',
+        ]);
+        return redirect()->route('projectboard.enter', $project->unique_id)->with('success', 'task added');
+    }
+    return back()->with('error', 'you dont have enough rights');
+    }
+
+
+
 }
 
-}
+
