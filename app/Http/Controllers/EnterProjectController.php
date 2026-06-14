@@ -11,7 +11,7 @@ class EnterProjectController extends Controller
 public function enterProject($unique_id)
 {
     $projects = Project::where('unique_id', $unique_id)
-        ->with(['users', 'tasks'])  // ← загружаем и задачи
+        ->with(['users', 'tasks'])  
         ->firstOrFail();
 
     $isMember = $projects->users()->where('user_id', auth()->id())->exists();
@@ -20,6 +20,6 @@ public function enterProject($unique_id)
         return redirect()->route('dashboard')->with('error', 'You dont have access to this project.');
     }
 
-    return view('projectboard', compact('projects'))->with('enterMessage','welcome to ');
+    return view('projectboard', compact('projects'));
 }
 }

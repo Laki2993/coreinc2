@@ -45,4 +45,57 @@ public function createProject(Request $request)
     
     return back()->with('success', 'Project deleted');
     }
+
+public function editProject(Request $request, $id)
+{
+    $request->validate([
+        'project_edit_description' => 'required|string|max:255',
+    ]);
+
+    $project = Project::findOrFail($id);
+
+    $isAdmin = $project->users()
+        ->where('user_id', auth()->id())
+        ->where('role', 'admin')
+        ->exists();
+
+    if (!$isAdmin) {
+        return back()->with('error', 'No editing rights');
+    }
+
+    $project->update([
+        'description' => $request->project_edit_description,
+    ]);
+
+    return back()->with('success', 'Project description updated');
+}
+
+
+public function updateRole(Request $request, $id)
+{
+    $request->validate([
+        'user_id' => 'required|integer|exists:users,id',
+        'choose_role' => 'required|in:admin,member',
+    ]);
+
+    $project = Project::findOrFail($id);
+
+    $isAdmin = $project->users()
+        ->where('user_id', auth()->id())
+        ->where('role', 'admin')
+        ->exists();
+
+    if (!$isAdmin) {
+        return back()->with('error', 'No rights');
+    }
+
+    if ( $project->user_id == $request->user_id ) {
+        return back()->with('error', 'The owners role cannot be changed');
+    }
+        $project->users()->updateExistingPivot($request->user_id, [
+            'role' => $request->choose_role
+        ]);
+    
+        return back()->with('success', 'The role has been updated');
+}
 }

@@ -30,9 +30,9 @@ Route::post('/projectboard/{unique_id}/tasks', [CreateTaskController::class, 'cr
 Route::delete('/tasks/{task}', [TaskCrudController::class, 'destroy'])->name('tasks.destroy');
 Route::delete('/project/{project}', [CreateProjectController::class, 'destroyProject'])->name('project.destroy');
 
+Route::put('/project/{project}/edit',[CreateProjectController::class,'editProject'])->name('projectDecript.edit');
 
-
-
+Route::put('/project/{project}/update-role', [CreateProjectController::class, 'updateRole'])->name('update.role');
 
 
 Route::get('/dashboard',[GetProjectController::class,'getProject'])->middleware(['auth', 'verified'])->name('dashboard');

@@ -8,11 +8,11 @@ use App\Models\Project;
 
 class CreateTaskController extends Controller
 {
-    public function createTask(Request $request, $unique_id)  // ← добавил $unique_id
+    public function createTask(Request $request, $unique_id)  
 {
     $request->validate([
         'task_title' => 'required|string|max:50',
-        'task_description' => 'nullable|string|max:255',  // описание может быть пустым
+        'task_description' => 'nullable|string|max:255',  
     ]);
 
     $project = Project::where('unique_id', $unique_id)->firstOrFail();
@@ -23,7 +23,7 @@ class CreateTaskController extends Controller
         $task = Task::create([
             'title' => $request->task_title,
             'description' => $request->task_description,
-            'project_id' => $project->id,  // ← берём ID из найденного проекта
+            'project_id' => $project->id,  
             'user_id' => auth()->id(),
             'status' => 'todo',
         ]);

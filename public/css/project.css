@@ -43,6 +43,8 @@
         display: flex;
         flex-direction: column;
         background-color: #ffffff;
+        background-image: url("../main/Bg_main2.jpg");
+        background-size: cover;
     }
 
     header {
@@ -119,12 +121,14 @@
 
     main{
         width: 100%;
+        height: 100%;
         flex: 1;
-        background-color: #F1F1F1;
+        background-color: #f1f1f100;
         display: flex;
         justify-content: start;
         gap: 1vw;
         align-items: center;
+
     }
 
     .project_info{
@@ -182,7 +186,7 @@
     }
 
     .project_setting_member{
-        width: 90%;
+        width: 100%;
         height: 10vw;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -216,8 +220,10 @@
     background: #2e2e2e;
     }
     .project_setting_description{
-        width: 90%;
-        height: fit-content;
+        width: 100%;
+        min-height: 4vw;
+        max-height: 9vw;
+        height: 9vw;
         overflow-y: scroll;
         overflow-x: hidden;
         background-color: rgb(70, 70, 70);
@@ -226,8 +232,62 @@
         gap: 1vw;
         padding: 1vw;
         justify-content: start;
-        align-items: center;   
+        align-items: start;   
+        border: 0.2vw solid rgba(149, 79, 172, 0);
+        box-shadow: rgba(217, 141, 243, 0) 0vw 0vw 1vw;
+        transition: 0.3s;
     }
+    
+    .project_setting_description_active{
+        width: 100%;
+        min-height: 4vw;
+        max-height: 9vw;
+        height: 9vw;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: rgb(70, 70, 70);
+        border-radius: 0.4vw;
+        display: grid;
+        gap: 1vw;
+        padding: 1vw;
+        justify-content: start;
+        align-items: start;   
+        border: 0.2vw solid rgb(148, 79, 172);
+        box-shadow: rgb(218, 141, 243) 0vw 0vw 0.5vw;
+        transition: 0.3s;
+    }
+
+    .project_container{
+        width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 1vw;
+        padding: 1vw;
+        justify-content: start;
+        align-items: center;    
+    }
+
+    .project_setting_description_active::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.project_setting_description_active::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.project_setting_description_active::-webkit-scrollbar-thumb {
+    background: rgb(83, 6, 109);
+    border-radius: 4px;
+}
+
+    .project_setting_description_active::-webkit-scrollbar-thumb:hover {
+    background: #2e2e2e;
+    }
+
 
     .project_setting_description::-webkit-scrollbar {
     width: 8px;
@@ -258,6 +318,8 @@
         font-weight: 200;
         font-size: 0.9vw;
         color: white;
+        user-select: none;
+         white-space: pre-wrap;
     }
 
     .project_member_img{
@@ -275,7 +337,7 @@
     }
 
     .project_member_info{
-        width: 19vw;
+        width: 15vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -285,6 +347,24 @@
         padding: 0.5vw;
         user-select: cursor;
         user-select: none;
+        transition: 0.3s;
+        border: dashed 0.2vw #ffffff00;
+    }
+    
+    .project_member_info.open{
+        width: 15vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.3vw;
+        transition: 0.3s;
+        border-radius: 0.3vw;
+        padding: 0.5vw;
+        user-select: cursor;
+        user-select: none;
+        transition: 0.3vw;
+        background-color: rgb(48, 48, 48);
+        border: dashed 0.2vw rgb(148, 79, 172);
     }
 
     .project_member_info:hover{
@@ -313,7 +393,7 @@
     }
 
     .project_setting_info{
-        height: 7vw;
+        height: 100%;
         display: grid;
         align-content:space-between ;
     }
@@ -343,7 +423,7 @@
         height: fit-content;
         font-family: "AdventPro";
         font-weight: 400;
-        font-size: 1vw;
+        font-size: 0.8vw;
         color: rgb(206, 206, 206);
         white-space: nowrap; 
         border-radius: 0.2vw;
@@ -351,13 +431,14 @@
 
     .project_admin_info{
         display: flex;
+        justify-content: end;
         gap: 0.5vw;
         align-items: center;
     }
 
     .project_setting_img{
-        width: 7vw;
-        height: 7vw;
+        width: 5vw;
+        height: 5vw;
         border-radius: 100%;
     }
 
@@ -399,14 +480,14 @@
         justify-content: center;
         gap: 2vw;
         padding: 0.5vw;
-        border-radius: 0.2vw;
-        background-color: white;
+        border-radius: 1vw;
+        background-color: rgb(255, 255, 255);
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
 
     #create_task{
-        width: 3vw;
-        height: 3vw;
+        width: 2vw;
+        height: 2vw;
         background-image: url(../projectboard/plus.svg);
         background-size: cover;
         border: none;
@@ -419,9 +500,10 @@
         background-color: rgb(80, 70, 70);
         border-radius: 0.2vw;
         display: grid; 
-        grid-auto-rows: 6vw;        
-        gap: 1vw;
+        grid-template-rows: repeat(6, auto);   /* первые 6 строк по 6vw */
+        gap: 0.5vw;
         justify-content: center;
+        align-items: start;
         padding: 1vw;
         overflow-y: scroll;
     }
@@ -460,6 +542,7 @@
         background-color: rgba(241, 241, 241, 0.384);
         backdrop-filter: blur(15px);
         border: none;
+        z-index: 2;
     }
 
     .form_create{
@@ -517,16 +600,37 @@
     .task_container{
         width: 65vw;
         height: 5vw;
+        overflow-y: hidden;
+        overflow-x: hidden;
         background-color: rgb(136, 133, 133);
         padding: 1vw;
-        display: flex;
+        display: grid;
+        grid-template-rows: 3vw;
         justify-content: space-between;
         align-items: center;
-        gap: 3vw;
+        gap: 1vw;
         border-radius: 0.2vw;
+        transition: 0.3s;
+    }
+     
+    .task_container.open{
+        width: 65vw;
+        height: 14vw;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background-color: rgb(136, 133, 133);
+        padding: 1vw;
+        display: grid;
+        grid-template-rows: 3vw;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0vw;
+        border-radius: 0.2vw;
+        transition: 0.3s;
     }
 
     .task_title{
+        width: fit-content;
         font-family: AdventPro;
         font-weight: 700;
         font-size: 2vw;
@@ -543,8 +647,11 @@
     .task_description{
         font-family: AdventPro;
         font-weight: 400;
-        font-size: 1vw;
+        font-size: 1.5vw;
         color: white;
+        padding: 0.5vw;
+        background-color: rgb(92, 92, 92);
+        border-radius: 0.3vw;
     }
 
     .avatar{
@@ -566,8 +673,9 @@
     }
 
     .task_info{
+        width: 63vw;
         display: flex;
-        justify-content: start;
+        justify-content: space-between;
         align-items: center;
         gap: 1vw;
     }
@@ -657,8 +765,8 @@
     }
 
     .settings{
-        width: 3vw;
-        height: 3vw;
+        width: 2vw;
+        height: 2vw;
         background-image: url(../projectboard/setting.svg);
         background-size: cover;
         border: none;
@@ -672,8 +780,8 @@
     }
 
     .settings_invers{
-        width: 3vw;
-        height: 3vw;
+        width: 2vw;
+        height: 2vw;
         background-image: url(../projectboard/setting_white.svg);
         background-size: cover;
         border: none;
@@ -685,8 +793,8 @@
 
 
     #create_chat{
-        width: 3vw;
-        height: 3vw;
+        width: 2vw;
+        height: 2vw;
         background-image: url(../projectboard/chat.svg);
         background-size: cover;
         border: none;
@@ -694,8 +802,8 @@
     }
 
     .exit_project{
-        width: 3vw;
-        height: 3vw;
+        width: 2vw;
+        height: 2vw;
         background-image: url(../projectboard/exit_project.svg);
         background-size: cover;
         border: none;
@@ -708,5 +816,127 @@
         background-color:  #c5b7ff67;   
     }
 
+
+    #form_edit_description{
+        width: 100%;
+        height: fit-content;
+        display: none;
+        gap: 0.5vw;
+        justify-content: start;
+        align-items: start;
+    }
+
+    #input_edit_description{
+        width: 14vw;
+        min-width: 14vw;
+        max-width: 14vw;
+        height: 9vw;
+        min-height: 9vw;
+        max-height: 9vw;
+        outline: none;
+        font-family: "AdventPro";
+        font-weight: 200;
+        font-size: 0.9vw;
+        color: white;
+        background-color: rgb(70, 70, 70);
+        border: none;
+    }
+
+    #btn_edit_description{
+        left: 16vw;
+        width: 1.5vw;
+        height: 1.5vw;
+        background-image: url(../projectboard/edit_white.svg);
+        background-size: cover;
+        background-color: #ffffff00;
+        border: none;
+        border-radius: 100%;
+        transition: 0.3s;
+    }
+
+    #btn_edit_description:hover{
+        background-color: #ffffff38;
+    }
+
+    .project_container_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #btn_update{
+        display: none;
+    }
+
+    #btn_link_update{
+        width: 1.5vw;
+        height: 1.5vw;
+        display: none;
+        border: none;
+        outline: none;
+        background-color: #ffffff00;
+        background-image: url(../projectboard/confirm.svg);
+        background-size: cover;
+        border-radius: 100%;
+        transition: 0.3s;
+    }
+
+    #btn_link_update:hover{
+        background-color: #ffffff38;
+    }
+
+    .edit_bar{
+        display: flex;
+        justify-content: end;
+        gap: 0.5vw;
+        align-items: center;
+    }
+
+    .task_description_container{
+        width: fit-content;
+    }
+
+    .role_form_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #select_role{
+        width: 8vw;
+        height: 1.5vw;
+        font-family: AdventPro;
+        font-weight: 200;
+        font-size: 1vw;
+        color: white;
+        outline: none;
+        border:solid 0.1vw white;
+        border-radius: 0.2vw;
+        background-color: rgb(49, 49, 49);
+    }
+
+    #select_role_btn{
+        width: 1.5vw;
+        height: 1.5vw;
+        border: none;
+        outline: none;
+        background-color: #ffffff00;
+        background-image: url(../projectboard/confirm.svg);
+        background-size: cover;
+        border-radius: 100%;
+        transition: 0.3s;
+    }
+
+    #select_role_btn:hover{
+        background-color: #ffffff38;
+    }
+
+    .role_form{
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5vw;
+        
+    }
 
 }
