@@ -11,7 +11,7 @@ class EnterProjectController extends Controller
 public function enterProject($unique_id)
 {
     $projects = Project::where('unique_id', $unique_id)
-        ->with(['users', 'tasks'])  
+        ->with(['users', 'tasks','messages'])  
         ->firstOrFail();
 
     $isMember = $projects->users()->where('user_id', auth()->id())->exists();

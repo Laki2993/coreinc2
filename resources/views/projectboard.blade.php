@@ -162,6 +162,28 @@
         @endforelse
     </section>
     </section>
+    <aside class="project_chat">
+        <section class="project_info">
+            <p class="project_setting_name">{{ $projects->title }} - chat</p>    
+        </section>
+        <section class="chat_place">
+            @foreach ( $projects->messages as $message )
+            <section class="message_container">
+                <article class="message_info">
+                    <img class="project_member_img" src="{{ Storage::url($message->user->avatar) }}" alt="">
+                    <p class="message_user_name">{{ $message->user->name}}</p>
+                </article>
+                <p class="message_user_text">{{ $message->message}}</p>
+                <p class="message_create_at">{{ $message->created_at->diffForHumans() }}</p>
+            </section>
+            @endforeach
+        </section>
+        <form  method="POST" action="{{ route('createMessage',$projects->unique_id) }}" class="form_send_message">
+            @csrf
+            <input type="text" name="message" maxlength="255"  id="message" required>
+            <button id="send_message" type="submit"></button>
+        </form>
+    </aside>
 </main>
 <section class="tool_bar_container">
     <nav class="nav_tool_bar">
@@ -172,6 +194,25 @@
     </nav>
 </section>
 <script>
+    let chat_flag = false;
+
+    document.getElementById('create_chat').addEventListener('click', function() {
+        if(chat_flag == false) {
+            //document.getElementById('settings').classList = 'settings_invers';
+            //document.querySelector('.project_setting_icon').classList = 'project_setting_icon_anim';
+            document.querySelector('.project_chat').style.width = '40%';
+            chat_flag = true;
+        }
+        else {
+            //document.getElementById('settings').classList = 'settings';
+            //document.querySelector('.project_setting_icon_anim').classList = 'project_setting_icon';
+            document.querySelector('.project_chat').style.width = '0%';
+            chat_flag = false;
+           // document.getElementById('project_info_description').style.display = "flex";
+            //document.getElementById('form_edit_description').style.display = "none";
+        }
+    });
+
     let setting_flag = false;
     document.getElementById('settings').addEventListener('click', function() {
         if(setting_flag == false) {

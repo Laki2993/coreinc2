@@ -9,23 +9,26 @@ use App\Http\Controllers\EnterProjectController;
 use App\Http\Controllers\JoinProjectController;
 use App\Http\Controllers\CreateTaskController;
 use App\Http\Controllers\TaskCrudController;
+use App\Http\Controllers\MessageController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::post('/projectboard/join', [JoinProjectController::class, 'join'])
-    ->middleware(['auth', 'verified'])
-    ->name('projectboard.join');
+->middleware(['auth', 'verified'])
+->name('projectboard.join');
 
-    Route::get('/projectboard/{unique_id}', [EnterProjectController::class, 'enterProject'])
-        ->middleware(['auth', 'verified'])
-        ->name('projectboard.enter');
+Route::get('/projectboard/{unique_id}', [EnterProjectController::class, 'enterProject'])
+->middleware(['auth', 'verified'])
+->name('projectboard.enter');
 
 
+Route::post('/projectboard/{unique_id}/messages', [MessageController::class, 'createMessage'])->name('createMessage');
 Route::post('/projectboard/{unique_id}/tasks', [CreateTaskController::class, 'createTask'])
     ->middleware(['auth', 'verified'])
     ->name('projectboard.createtask');
+
 
 Route::delete('/tasks/{task}', [TaskCrudController::class, 'destroy'])->name('tasks.destroy');
 Route::delete('/project/{project}', [CreateProjectController::class, 'destroyProject'])->name('project.destroy');

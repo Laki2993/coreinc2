@@ -12,16 +12,21 @@
         <form method="POST" action="<?php echo e(route('projectboard.create')); ?>" class="modal_form_create" id="modal_form_create">
             <?php echo csrf_field(); ?>
             <article class="btn_exit_form">
-                <button  class="exit" id="btn_create_exit"></button>
+                <img src="<?php echo e(asset('main\main_logo.svg')); ?>" alt="">
+                <button type="button"  class="exit" id="btn_create_exit"></button>
             </article>
-            <input class="input" type="text" name="project_title" placeholder="project name">
-            <input class="input" type="text" name="project_description" placeholder="project description">
-            <button class="btn_form_create" id="btn_form_create" type="submit">create</button>
+            <input class="input" type="text" name="project_title" placeholder="project name" required>
+            <textarea class="input_description" name="project_description" required  placeholder="project description"  maxlength="255"></textarea>
+            <section class="img_change_container">
+                <button type="button" id="btn_preview"></button>
+                <p class="form_text">preview</p>
+            </section>
+            <button class="btn_form_create" id="btn_form_create" type="submit">CREATE</button>
         </form>
-        <form method="POST" action="<?php echo e(route('projectboard.join')); ?>" class="modal_form_create" id="modal_form_join">
+        <form method="POST" action="<?php echo e(route('projectboard.join')); ?>" class="modal_form_join" id="modal_form_join">
             <?php echo csrf_field(); ?>
             <article class="btn_exit_form">
-                <button class="exit" id="btn_join_exit"></button>
+                <button type="button" class="exit" id="btn_join_exit"></button>
             </article>
             <input class="input" type="text" name="project_id" placeholder="project id">
             <button class="btn_form_create" id="btn_join_form" type="submit">join</button>
@@ -60,11 +65,16 @@
     <article class="card" data-unique="<?php echo e($project->unique_id); ?>">
         <article class="header_card">
             <strong><?php echo e($project->title); ?></strong>
-            <form method="POST" action="<?php echo e(route('project.destroy', $project->id)); ?>">
-                <?php echo csrf_field(); ?>
-                <?php echo method_field('DELETE'); ?>
-                <button class="btn_delete_project" type="submit"></button>
-            </form>
+            <nav class="card_toolbar">
+                <form method="POST" action="<?php echo e(route('project.destroy', $project->id)); ?>">
+                    <?php echo csrf_field(); ?>
+                    <?php echo method_field('DELETE'); ?>
+                    <nav class="card_tool_bar">
+                        <button class="btn_delete_project" type="submit"></button>
+                    </nav>
+                </form>
+                <button class="card_toolbar_btn" id="setting_btn"></button>
+            </nav>
         </article>
         <section class="bg_project">
            <p class="Project_marker_img"><?php echo e($project->img); ?></p>
@@ -103,6 +113,15 @@
         let form_join = false;
         document.getElementById('header_user_data').addEventListener('click', function() {
             window.location.href = 'profile';
+        });
+
+        document.getElementById("btn_preview").addEventListener('click', function() {
+           document.querySelector(".form_text").innerHTML =  "the option is temporarily unavailable"; 
+            document.querySelector(".form_text").classList.add('waring');
+            setTimeout(() => {
+                document.querySelector(".form_text").innerHTML =  "preview";
+                document.querySelector(".form_text").classList.remove('waring');
+            },3000);
         });
 
         document.getElementById("btn_create").addEventListener('click', function() {
@@ -187,10 +206,12 @@ document.getElementById("btn_join_form").addEventListener("click", function() {
 
 document.getElementById("btn_form_create").addEventListener("click", function() {
     document.getElementById("dialog").style.display = "none";
+    document.querySelector('.modal_form_create').style.display = "none";
 });
 
 document.getElementById("btn_join_exit").addEventListener("click", function() {
     document.getElementById("dialog").style.display = "none";
+    document.querySelector('.modal_form_join').style.display = "none";
 })
 document.getElementById("btn_create_exit").addEventListener("click", function() {
     document.getElementById("dialog").style.display = "none";
@@ -199,30 +220,45 @@ document.getElementById("btn_create_exit").addEventListener("click", function() 
 document.querySelectorAll('.card').forEach(item => {
     item.addEventListener('mouseleave', function(event) {
         let parent = this.closest('.card');
-        let trash = parent.querySelector('.btn_delete_project');
+       // let trash = parent.querySelector('.btn_delete_project');
         let container = parent.querySelector('.Project_description_container');
         let projectDate = parent.querySelector('.project_Date');
             container.style.height = "0%";
             container.style.padding = "0vw";
-            trash.style.display = "none";
+            //trash.style.display = "none";
             if (projectDate) projectDate.style.display = "none";
     });
 });
+
+document.querySelectorAll('.card_toolbar_btn').forEach(item => {
+    item.addEventListener('click', function(event) {
+        this.classList.toggle('card_toolbar_btn_dark');
+        
+        let parent = this.closest('.card');
+        let trash = parent.querySelector('.btn_delete_project');
+        if (trash) {
+            let isVisible = window.getComputedStyle(trash).display !== 'none';
+            trash.style.display = isVisible ? 'none' : 'block';
+        }
+    });
+});
+
+////////////////////////////////////////////////////////
 document.querySelectorAll('.card').forEach(item => {
     item.addEventListener('mouseenter', function(event) {
         let parent = this.closest('.card');
-        let trash = parent.querySelector('.btn_delete_project');
+        //let trash = parent.querySelector('.btn_delete_project');
         let container = parent.querySelector('.Project_description_container');
         let projectDate = parent.querySelector('.project_Date');
         
         if (container.style.height === "100%") {
-            trash.style.display = "none";
+            //trash.style.display = "none";
             container.style.height = "0%";
             container.style.padding = "0vw";
             if (projectDate) projectDate.style.display = "none";
         } else {
             container.style.height = "100%";
-            trash.style.display = "block";
+           // trash.style.display = "block";
             container.style.padding = "0.5vw";
             if (projectDate) projectDate.style.display = "flex";
         }
